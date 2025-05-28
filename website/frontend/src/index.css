@@ -5,10 +5,6 @@ a.active hr{
   display: block;
 }
 
-*{
-  font-family: Outfit;
-}
-
 .prata-regular {
   font-family: "Prata", serif;
   font-weight: 400;
