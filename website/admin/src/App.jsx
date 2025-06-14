@@ -9,12 +9,13 @@ import Login from '../components/Login'
 import { ToastContainer, toast } from 'react-toastify';
 
 export const backendUrl = 'http://localhost:4000'
+export const currency = '$';
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):'');
   useEffect(()=>{
       localStorage.setItem('token', token);
-      console.log(token);
+      // console.log(token);
   }, [token])
   return (
     <div className='bg-gray-50 min-h-screen'>
