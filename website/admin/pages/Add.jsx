@@ -15,7 +15,7 @@ const Add = ({token}) => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Men");
   const [subCategory, setSubCategory] = useState("Topwear");
-  const [bestseller, setBestseller] = useState(false);
+  const [bestseller, setBestseller] = useState("false");
   const [sizes, setSizes] = useState([]);
   const onSubmitHandler=async(e)=>{
     e.preventDefault();
@@ -130,7 +130,7 @@ const Add = ({token}) => {
           </div>
         </div>
         <div className='flex gap-2 mt-2'>
-          <input onChange={(e)=>setBestseller(prev=>!prev)} type='checkbox' id='bestseller' />
+          <input onChange={(e)=>setBestseller(e.target.checked?"true":"false")} type='checkbox' id='bestseller' />
           <label className='cursor-pointer' htmlFor='bestseller'>Best Seller</label>
         </div>
         <button type='submit' className='w-28 py-3 mt-4 bg-black text-white cursor-pointer'>ADD</button>

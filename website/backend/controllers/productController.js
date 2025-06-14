@@ -5,7 +5,8 @@ const addProduct=async(req, res)=>{
     console.log("Going to add");
     console.log(req.body);
     try { 
-        const {name, description, price, category, subCategory, sizes, bestSeller} = req.body;
+        const {name, description, price, category, subCategory, sizes, bestseller} = req.body;
+        console.log("Bestseller: ", bestseller);
         const image1= req.files.image1 && req.files.image1[0];
         const image2= req.files.image2 && req.files.image2[0];
         const image3= req.files.image3 && req.files.image3[0];
@@ -24,7 +25,7 @@ const addProduct=async(req, res)=>{
             category,
             subCategory,
             sizes: JSON.parse(sizes),
-            bestSeller: bestSeller==='True'?true:false,
+            bestSeller: bestseller==='true'?true:false,
             image: imagesUrl,
             date: Date.now()
         }
