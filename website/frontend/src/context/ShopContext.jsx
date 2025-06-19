@@ -103,7 +103,6 @@ const ShopContextProvider=(props)=>{
                 headers: { token }
             });
             if (response.data.success) {
-                console.log(response.data);
                 setCartItems(response.data.cartData);
             }
         } catch (error) {
@@ -125,7 +124,7 @@ const ShopContextProvider=(props)=>{
 
 
     const value={
-        products, currency, delivery_fee, search, setSearch, showSearch, setShowSearch, cartItems, addToCart, getCartCount, updateQuantity, getCartAmount, navigate, backendUrl, token, setToken
+        products, currency, delivery_fee, search, setSearch, showSearch, setShowSearch, cartItems, addToCart, getCartCount, updateQuantity, getCartAmount, navigate, backendUrl, token, setToken, setCartItems
     }
 
     return(

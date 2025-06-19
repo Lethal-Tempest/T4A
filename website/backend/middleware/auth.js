@@ -3,7 +3,8 @@ import jwt from 'jsonwebtoken';
 const authUser = async (req, res, next) => {
     try {
         const { token } = req.headers;
-        if (!token) {
+
+        if (!token || token.trim() === '') {
             return res.json({
                 success: false,
                 message: "Token not found"
@@ -12,7 +13,7 @@ const authUser = async (req, res, next) => {
 
         const token_decode = jwt.verify(token, process.env.JWT_SECRET);
         req.userId = token_decode.id;
-        next(); // Move to next middleware/route
+        next();
     } catch (error) {
         console.log(error);
         res.json({
