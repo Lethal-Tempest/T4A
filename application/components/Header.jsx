@@ -35,7 +35,13 @@ export default function Header() {
           onChangeText={setSearch}
         />
 
+        <TouchableOpacity
+          onPress={() => {
+          router.push('/signin')
+          }}
+        >
         <Image source={logo} className="rounded-full w-12 h-12" />
+        </TouchableOpacity>
       </View>
 
       {/* Search Result Overlay */}
